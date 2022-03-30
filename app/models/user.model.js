@@ -23,7 +23,7 @@ const UserSchema = mongoose.Schema({
         type: String,
         set: sha1Pwd
     },
-    status: {},
+    status: [], // { status: 1, libelle: Client}
     token: {
         type: String,
         unique: true
