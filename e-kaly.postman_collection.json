@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "270ad723-c5b4-4980-bc41-057ec42b3f43",
+		"name": "e-kaly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/status/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"display\": \"Restaurant\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/status/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
