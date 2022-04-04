@@ -1,57 +1,109 @@
 const { gen } = require("../models/utils/Generic");
 const User = require("./../models/user.model");
+const Role = require("../models/role.model");
+const {
+    sha1,
+    generateToken,
+    handleError,
+    checkToken,
+} = require("../models/utils/Util");
 
 exports.login = (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     User.findOne({ email: email }, function (err, user) {
-        if (user.password === password) {
-            User.findByIdAndUpdate(user._id, {
-                token: generateToken(user.name),
-            })
-                .then((data) => {
-                    res.send(data);
+        if (!user)
+            handleError(
+                res,
+                "Your email or / and password not correct, please verify"
+            );
+        else {
+            if (user.password === sha1(password)) {
+                const token = generateToken(user.name);
+                User.findByIdAndUpdate(user._id, {
+                    token: token,
                 })
-                .catch((err) => {
-                    res.status(500).send({
-                        message: err.message,
+                    .then((data) => {
+                        res.send({
+                            status: 200,
+                            message: "Success",
+                            data: {
+                                token: token,
+                            },
+                        });
+                    })
+                    .catch((err) => {
+                        handleError(res, err.message);
                     });
-                });
-        } else {
-            console.log("incorrecte");
-            res.status(500).send({
-                status: 500,
-                message: "Some field are incorrect",
-            });
+            } else {
+                handleError(res, "Incorrect password");
+            }
         }
     });
 };
 
 exports.save = (req, res) => {
-    req.body.status = 1;
     gen.save(User, res, req);
 };
 
-// exports.logout = (req, res) => {
-//     try {
-//         const metadata = checkToken(req);
-//         Token.logout(metadata.isValid.userId);
-//         res.send(`Delete ${metadata.isValid.userId}`);
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send(error);
-//     }
-// };
+exports.logout = (req, res) => {
+    try {
+        const metadata = checkToken(req);
+        const token = metadata.token;
+        User.findOne({ token: token }, function (err, user) {
+            if (!user) handleError(res, "Token not found, please verify");
+            else {
+                User.findByIdAndUpdate(user._id, {
+                    token: null,
+                })
+                    .then((data) => {
+                        res.send({
+                            status: 200,
+                            message: "Disconnected",
+                            data: {
+                                token: token,
+                            },
+                        });
+                    })
+                    .catch((err) => {
+                        handleError(res, err.message);
+                    });
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+};
 
-// exports.getInfo = (req, res) => {
-//     try {
-//         const metadata = checkToken(req);
-//         const user = findByIdCustom(metadata, res);
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send(error);
-//     }
-// };
+exports.getInfo = (req, res) => {
+    try {
+        const metadata = checkToken(req);
+        const token = metadata.token;
+        User.findOne({ token: token }, function (err, user) {
+            if (!user) handleError(res, "Token not found, please verify");
+            else {
+                console.log('user', user.name)
+                Role.findOne({code: user.role}, function(err, role){
+                    if (err) handleError(res, err.message);
+                    else {
+                        res.send({
+                            status: 200,
+                            message: "Success",
+                            data: {
+                                username: user.name,
+                                role: role.display
+                            },
+                        });
+                    }
+                });
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+};
 
 // const findByIdCustom = (data, res) => {
 //     User.findById(data.isValid.userId, function (err, user) {

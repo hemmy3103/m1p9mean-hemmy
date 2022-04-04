@@ -1,0 +1,34 @@
+[
+  {
+    "firstname": "Monica",
+    "lastname": "Ryan",
+    "dateOfBorn": "1966-07-09",
+    "email": "m.ryan@gmail.com",
+    "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "role": "3"
+  },
+  {
+    "firstname": "Harriet",
+    "lastname": "Davies",
+    "dateOfBorn": "1966-07-09",
+    "email": "h.davies@gmail.com",
+    "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "role": "3"
+  },
+  {
+    "firstname": "Pinja",
+    "lastname": "Niemela",
+    "dateOfBorn": "2002-12-02",
+    "email": "p.niemela@gmail.com",
+    "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "role": "4"
+  },
+  {
+    "firstname": "Alexander",
+    "lastname": "Ouellet",
+    "dateOfBorn": "2001-04-15",
+    "email": "alexander.ouellet@gmail.com",
+    "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "role": "4"
+  }
+]

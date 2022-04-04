@@ -1,0 +1,18 @@
+[
+  {
+    "display": "Client",
+    "code": "1"
+  },
+  {
+    "display": "Restaurant",
+    "code": "2"
+  },
+  {
+    "display": "Responsable",
+    "code": "3"
+  },
+  {
+    "display": "Livreur",
+    "code": "4"
+  }
+]

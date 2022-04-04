@@ -1,5 +1,11 @@
 const jwt = require("jsonwebtoken");
 
+exports.handleError = (res, message) => {
+    res.status(500).send({
+        status: 500,
+        message: message,
+    });
+}
 
 exports.sha1 = (hash) => {
     var sha1 = require("sha1");
@@ -31,8 +37,7 @@ exports.checkToken = (req) => {
     } catch (error) {
         throw new CustomException(
             500,
-            `This token ${token} is not valide`,
-            error.message
+            `This token ${token} is not valide\n ${error.message}`            
         );
     }
 };
