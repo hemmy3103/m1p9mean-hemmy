@@ -1,0 +1,38 @@
+[
+  {
+    "prenom": "Monica",
+    "nom": "Ryan",
+    "nomUtilisateur": "m.ryan@gmail.com",
+    "mdp": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "id_profile": {
+      "$oid": "624dcce50d061c58a148fe43"
+    }
+  },
+  {
+    "prenom": "Harriet",
+    "nom": "Davies",
+    "nomUtilisateur": "h.davies@gmail.com",
+    "mdp": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "id_profile": {
+      "$oid": "624dcce50d061c58a148fe43"
+    }
+  },
+  {
+    "prenom": "Pinja",
+    "nom": "Niemela",
+    "nomUtilisateur": "p.niemela@gmail.com",
+    "mdp": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "id_profile": {
+      "$oid": "624dcce50d061c58a148fe45"
+    }
+  },
+  {
+    "prenom": "Alexander",
+    "nom": "Ouellet",
+    "nomUtilisateur": "alexander.ouellet@gmail.com",
+    "mdp": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+    "id_profile": {
+      "$oid": "624dcce50d061c58a148fe44"
+    }
+  }
+]

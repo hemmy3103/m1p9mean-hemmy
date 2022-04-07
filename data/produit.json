@@ -1,0 +1,30 @@
+[
+  {
+    "nom": "KFC -- ak frite salade",
+    "id_restaurant": "624ca3096a26ed705cd9ce6d",
+    "cout": 12000,
+    "prix": 16000,
+    "img": "1.jpg"
+  },
+  {
+    "nom": "KFC -- Ravitoto sy Hena-kisoa",
+    "id_restaurant": "624ca3096a26ed705cd9ce6d",
+    "cout": 13000,
+    "prix": 20000,
+    "img": "2.jpg"
+  },
+  {
+    "nom": "GP -- fddfskisoa",
+    "id_restaurant": "624ca3096a26ed705cd9ce6e",
+    "cout": 13000,
+    "prix": 20000,
+    "img": "2.jpg"
+  },
+  {
+    "nom": "ARK -- Rfdsfdskisoa",
+    "id_restaurant": "624ca3096a26ed705cd9ce6f",
+    "cout": 13000,
+    "prix": 20000,
+    "img": "2.jpg"
+  }
+]
