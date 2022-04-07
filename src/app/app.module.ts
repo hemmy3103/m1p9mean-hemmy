@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ListRestaurantComponent } from './pages/list-restaurant/list-restaurant.component';
+import { ListeCommandeComponent } from './pages/liste-commande/liste-commande.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ListRestaurantComponent,
+    ListeCommandeComponent
   ],
   imports: [
     BrowserModule,
