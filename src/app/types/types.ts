@@ -1,6 +1,6 @@
 export interface IUserSignUp {
   nomUtilisateur: string,
-  mdp: string,
+  mdp?: string,
   nom: string,
   prenom: string,
 }

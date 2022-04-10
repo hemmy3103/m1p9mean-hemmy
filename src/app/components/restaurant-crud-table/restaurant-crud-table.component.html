@@ -1,0 +1,52 @@
+<div class="flex justify-end m-1">
+  <button type="button"
+  data-modal-toggle="addRestaurant"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <svg class="w-6 h-6" data-darkreader-inline-stroke="" fill="none" stroke="currentColor"
+      style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+    </svg>
+    Ajouter
+  </button>
+</div>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3" *ngFor="let col of columns">
+          {{col}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let restaurant of restaurants; let i = index">
+        <th scope="row" class="px-6 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+          {{restaurant.name}}
+        </th>
+        <td class="px-6"> {{restaurant.description}} </td>
+        <td class="px-6"> {{restaurant.adress}} </td>
+        <td class="px-6 mx-auto py-1">
+          <button type="button" data-toggle="collapse" [attr.data-modal-toggle]="'#edit'+i"
+            class="text-yellow-400  border border-yellow-400  hover:bg-yellow-400  hover:text-white focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
+            <svg class="w-6 h-6" data-darkreader-inline-stroke="" fill="none" stroke="currentColor"
+              style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+              </path>
+            </svg>
+          </button>
+          <app-restaurant-modal-edit [identity]="'#edit'+i"></app-restaurant-modal-edit>
+          <button type="button"
+            class="text-indigo-700 border border-indigo-700 hover:bg-indigo-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
+            <svg class="w-6 h-6" data-darkreader-inline-stroke="" fill="none" stroke="currentColor"
+              style="--darkreader-inline-stroke:currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+              </path>
+            </svg> </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-restaurant-modal-add identity="addRestaurant"></app-restaurant-modal-add>

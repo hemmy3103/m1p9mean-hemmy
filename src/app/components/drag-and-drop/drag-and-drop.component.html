@@ -1,36 +1,35 @@
-<div style="display: flex">
 
-  <div class="card m-3 p-2" style="width: 300px;">
-    <h5 class="card-title">Todo</h5>
+<div style="display: flex" class="mb-5">
+  <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-5" >
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-blue-700 dark:text-white">Commandé</h5>
     <div class="card-body" style="width: 200px;">
-      <div style="border:1px red solid" cdkDropList [cdkDropListData]="todoList" [cdkDropListConnectedTo]="secondList"
+      <div  cdkDropList [cdkDropListData]="orders" [cdkDropListConnectedTo]="secondList"
            #firstList="cdkDropList"
         (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let todo of todoList" class="pop" cdkDrag>{{todo}}</div>
+        <!-- <div *ngFor="let todo of todoList" class="pop" cdkDrag>
+          {{todo}}</div> -->
+          <app-order-card *ngFor="let order of orders" [order]="order" cdkDrag></app-order-card>
       </div>
     </div>
   </div>
 
 
-  <div class="card m-3 p-2" style="width: 300px;">
-    <h5 class="card-title">Process</h5>
+  <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-5" >
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-yellow-300 dark:text-white">A Livré</h5>
     <div class="card-body" style="width: 200px;">
-      <div style="border:1px red solid" cdkDropList [cdkDropListData]="processList" [cdkDropListConnectedTo]="thirdList"
+      <div cdkDropList [cdkDropListData]="orders1" [cdkDropListConnectedTo]="firstList"
            #secondList="cdkDropList"
         (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let process of processList" class="pop" cdkDrag>{{process}}</div>
+        <app-order-card *ngFor="let order of orders1" [order]="order" cdkDrag></app-order-card>
       </div>
     </div>
   </div>
 
-  <div class="card m-3 p-2" style="width: 300px;">
-    <h5 class="card-title">Done</h5>
+  <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mx-5" >
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-green-500 dark:text-white">Livré</h5>
     <div class="card-body" style="width: 200px;">
-      <div style="border:1px red solid" cdkDropList [cdkDropListData]="doneList" [cdkDropListConnectedTo]="secondList"
-           #thirdList="cdkDropList"
-        (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let done of doneList" class="pop" cdkDrag>{{done}}</div>
-      </div>
+        <app-order-card *ngFor="let order of orders1" [order]="order"></app-order-card>
     </div>
   </div>
+
 </div>

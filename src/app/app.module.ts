@@ -38,6 +38,16 @@ import { DishesCrudTableComponent } from './components/dishes-crud-table/dishes-
 import { DishModalAddComponent } from './components/dish-modal-add/dish-modal-add.component';
 import { DishModalEditComponent } from './components/dish-modal-edit/dish-modal-edit.component';
 import { RestaurantBenenficeComponent } from './pages/restaurant-benenfice/restaurant-benenfice.component';
+import { OrderAssignComponent } from './pages/order-assign/order-assign.component';
+import { OrderCardComponent } from './components/order-card/order-card.component';
+import { CrudRestaurantComponent } from './pages/crud-restaurant/crud-restaurant.component';
+import { RestaurantCrudTableComponent } from './components/restaurant-crud-table/restaurant-crud-table.component';
+import { RestaurantModalEditComponent } from './components/restaurant-modal-edit/restaurant-modal-edit.component';
+import { RestaurantModalAddComponent } from './components/restaurant-modal-add/restaurant-modal-add.component';
+import { CrudClientComponent } from './pages/crud-client/crud-client.component';
+import { ClientCrudTableComponent } from './components/client-crud-table/client-crud-table.component';
+import { ResponsableBeneficeComponent } from './pages/responsable-benefice/responsable-benefice.component';
+import { DeliveryComponent } from './pages/delivery/delivery.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +81,17 @@ import { RestaurantBenenficeComponent } from './pages/restaurant-benenfice/resta
     DishesCrudTableComponent,
     DishModalAddComponent,
     DishModalEditComponent,
-    RestaurantBenenficeComponent
+    RestaurantBenenficeComponent,
+    OrderAssignComponent,
+    OrderCardComponent,
+    CrudRestaurantComponent,
+    RestaurantCrudTableComponent,
+    RestaurantModalEditComponent,
+    RestaurantModalAddComponent,
+    CrudClientComponent,
+    ClientCrudTableComponent,
+    ResponsableBeneficeComponent,
+    DeliveryComponent
   ],
   imports: [
     BrowserModule,
