@@ -11,6 +11,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private utilsService: UtilsService) { }
 
+  profile() {
+    const options = this.utilsService.getOptions(true);
+    return this.http.get(`${BASE_URL}auth/profile`, options);
+  }
+
   signUp(user: IUserSignUp) {
     const options = this.utilsService.getOptions(false);
     const body = { utilisateur: user }
