@@ -12,6 +12,7 @@ import { ListeCommandeComponent } from './pages/liste-commande/liste-commande.co
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { OrderAssignComponent } from './pages/order-assign/order-assign.component';
+import { OrderDeliveryComponent } from './pages/order-delivery/order-delivery.component';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ResponsableBeneficeComponent } from './pages/responsable-benefice/responsable-benefice.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
   {
     path: 'livreur', children: [
       { path: 'orders', component: DeliveryComponent },
+      { path: 'delivered', component: OrderDeliveryComponent },
     ]
   },
   // {

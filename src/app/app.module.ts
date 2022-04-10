@@ -48,6 +48,9 @@ import { CrudClientComponent } from './pages/crud-client/crud-client.component';
 import { ClientCrudTableComponent } from './components/client-crud-table/client-crud-table.component';
 import { ResponsableBeneficeComponent } from './pages/responsable-benefice/responsable-benefice.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
+import { OrderDeliveryTableComponent } from './components/order-delivery-table/order-delivery-table.component';
+import { OrderDeliveryComponent } from './pages/order-delivery/order-delivery.component';
+import { OrderDeliveredTableComponent } from './components/order-delivered-table/order-delivered-table.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,10 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
     CrudClientComponent,
     ClientCrudTableComponent,
     ResponsableBeneficeComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    OrderDeliveryTableComponent,
+    OrderDeliveryComponent,
+    OrderDeliveredTableComponent
   ],
   imports: [
     BrowserModule,

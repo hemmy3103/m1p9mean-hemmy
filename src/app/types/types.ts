@@ -31,5 +31,7 @@ export interface IOrder {
   montant: number,
   cout?: number,
   visible?: boolean,
-  dateOrder?: Date
+  dateOrder?: Date,
+  adressDelivery?: string,
+  dateDelivery?: Date
 }
