@@ -5,9 +5,10 @@ const router = express.Router();
 
 router.get("/", async function (req, res) {
     try {
-        await authService.isValidToken(req.headers.authorization, 1);
+        const token = tools.extractToken(req.headers.authorization);
+        const tokenUtilisateur = await authService.findTokenUser(token);
         restaurantService
-            .findRestaurants(req.body)
+            .findRestaurants(tokenUtilisateur.utilisateur, req.body)
             .then((result) => {
                 res.json(responseBuilder.success(result));
             })

@@ -1,0 +1,14 @@
+use e-kaly-team;
+db.utilisateur.drop();
+
+
+db.t5.drop();
+
+db.createView(
+	"t5",
+	"utilisateur",
+	[
+		{$lookup: {from: "profile", localField: "id_profile", foreignField: "_id", as: "profile_utilisateur"}},
+    {$unwind: {path: "$profile_utilisateur"}}
+	]
+);
