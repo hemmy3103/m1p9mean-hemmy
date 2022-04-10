@@ -11,6 +11,6 @@ export class RestaurantCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('this.restaurant', this.restaurant)
+    // console.log('this.restaurant', this.restaurant)
   }
 }
