@@ -51,6 +51,7 @@ import { DeliveryComponent } from './pages/delivery/delivery.component';
 import { OrderDeliveryTableComponent } from './components/order-delivery-table/order-delivery-table.component';
 import { OrderDeliveryComponent } from './pages/order-delivery/order-delivery.component';
 import { OrderDeliveredTableComponent } from './components/order-delivered-table/order-delivered-table.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { OrderDeliveredTableComponent } from './components/order-delivered-table
     OrderDeliveryTableComponent,
     OrderDeliveryComponent,
     OrderDeliveredTableComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
