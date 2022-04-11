@@ -12,7 +12,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: 'REST 1',
       dish: 'D 1',
-      price: 54,
+      prix: 54,
       quantity: 76,
       cout: 43,
       montant: 6556,
@@ -22,7 +22,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: 'REST 2',
       dish: 'D 2',
-      price: 54,
+      prix: 54,
       cout: 43,
       quantity: 53,
       montant: 6356,
@@ -32,7 +32,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: 'REST 3',
       dish: 'D 4',
-      price: 54,
+      prix: 54,
       quantity: 45,
       cout: 7,
       montant: 6356,
@@ -42,7 +42,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: 'REST 4',
       dish: 'D 4',
-      price: 54,
+      prix: 54,
       cout: 56,
       quantity: 445,
       montant: 656,
@@ -54,7 +54,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: '11111REST 1',
       dish: 'D 1',
-      price: 54,
+      prix: 54,
       quantity: 76,
       cout: 43,
       montant: 6556,
@@ -64,7 +64,7 @@ export class DragAndDropComponent implements OnInit {
     {
       restaurant: '111111REST 2',
       dish: 'D 2',
-      price: 54,
+      prix: 54,
       cout: 43,
       quantity: 53,
       montant: 6356,

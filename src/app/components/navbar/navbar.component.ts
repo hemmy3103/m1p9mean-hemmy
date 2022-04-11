@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
         // console.log('this.defaultLink', this.defaultLink)
       },
       error: (e) => console.error(e),
-      complete: () => console.info('login complete')
+      // complete: () => console.info('login complete')
     });
   }
   showProfile = false;

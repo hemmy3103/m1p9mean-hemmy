@@ -11,22 +11,24 @@ export interface IUserLogin {
 }
 
 export interface IRestaurant {
-  name: string,
-  description: string,
+  _id?: string;
+  nom: string,
+  description?: string,
   adress?: string,
-  image: string,
+  img?: string,
 }
 
 export interface IDish extends IRestaurant {
-  cost: number
-  price: number
+  cout: number
+  prix: number
   visible?: boolean
+  id_restaurant?:string
 }
 
 export interface IOrder {
   restaurant?: string,
   dish: string,
-  price: number,
+  prix: number,
   quantity: number,
   montant: number,
   cout?: number,

@@ -15,4 +15,7 @@ export class DishCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  click(){
+    console.log('identity', this.identity)
+  }
 }

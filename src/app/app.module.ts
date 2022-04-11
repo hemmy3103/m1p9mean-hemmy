@@ -97,7 +97,7 @@ import { OrderDeliveredTableComponent } from './components/order-delivered-table
     DeliveryComponent,
     OrderDeliveryTableComponent,
     OrderDeliveryComponent,
-    OrderDeliveredTableComponent
+    OrderDeliveredTableComponent,
   ],
   imports: [
     BrowserModule,

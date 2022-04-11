@@ -13,7 +13,7 @@
           {{order.dish}}
         </th>
         <td class="px-6 py-2"> {{order.cout| number}} </td>
-        <td class="px-6 py-2"> {{order.price| number}} </td>
+        <td class="px-6 py-2"> {{order.prix| number}} </td>
         <td class="px-6 py-2">{{order.dateOrder | date}} </td>
         <td class="px-6 py-2">
           <app-switch-toogle [isChecked]="order.visible" [identity]="'#visible'+i"></app-switch-toogle>

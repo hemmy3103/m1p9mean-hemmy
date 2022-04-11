@@ -9,40 +9,40 @@ import { IRestaurant } from 'src/app/types/types';
 export class CrudRestaurantComponent implements OnInit {
   restaurants: Array<IRestaurant> = [
     {
-      name: 'Gastro',
+      nom: 'Gastro',
       description: 'Gastro description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
     {
-      name: 'KFC',
+      nom: 'KFC',
       description: 'KFC description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
     {
-      name: 'Samiflow',
+      nom: 'Samiflow',
       description: 'Samiflow description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
     {
-      name: 'Bogota',
+      nom: 'Bogota',
       description: 'Bogota description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
     {
-      name: 'H2',
+      nom: 'H2',
       description: 'H2 description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
     {
-      name: 'B1',
+      nom: 'B1',
       description: 'B1 description',
       adress: 'By Pass',
-      image: ''
+      img: ''
     },
 
   ];

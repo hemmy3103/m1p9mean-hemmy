@@ -9,57 +9,51 @@ import { IDish } from 'src/app/types/types';
 export class RestaurantDishesComponent implements OnInit {
   dishes: Array<IDish> = [
     {
-      name: 'A1',
+      nom: 'A1',
       description: 'A1 description',
       adress: 'By Pass',
-      image: '',
-      cost: 4588,
-      price: 4587,
+      cout: 4588,
+      prix: 4587,
       visible: true
     },
     {
-      name: 'B1',
+      nom: 'B1',
       description: 'B1 description',
       adress: 'By Pass',
-      image: '',
-      cost: 787877,
-      price: 4587,
+      cout: 787877,
+      prix: 4587,
       visible: true
     },
     {
-      name: 'F@',
+      nom: 'F@',
       description: 'F# description',
       adress: 'By Pass',
-      image: '',
-      cost: 255777,
-      price: 4587,
+      cout: 255777,
+      prix: 4587,
       visible: true
     },
     {
-      name: 'FE',
+      nom: 'FE',
       description: 'ER description',
       adress: 'By Pass',
-      image: '',
-      cost: 787,
-      price: 4587,
+      cout: 787,
+      prix: 4587,
       visible: true
     },
     {
-      name: 'TR',
+      nom: 'TR',
       description: 'TR description',
       adress: 'By Pass',
-      image: '',
-      cost: 4588,
-      price: 58588,
+      cout: 4588,
+      prix: 58588,
       visible: false
     },
     {
-      name: 'FE',
+      nom: 'FE',
       description: 'ER description',
       adress: 'By Pass',
-      image: '',
-      cost: 877,
-      price: 888,
+      cout: 877,
+      prix: 888,
       visible: false
     },
 

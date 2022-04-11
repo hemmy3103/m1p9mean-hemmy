@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     if(this.utilsService.isLoggedIn()) {
       this.authService.profile().subscribe({
         next: (metadata: any) => {
+          console.log('metadata', metadata)
           const codeProfile = metadata.data.profile.code;
           const url = this.utilsService.redirect(codeProfile);
           console.log('redirect()', url)
@@ -31,6 +32,27 @@ export class LoginComponent implements OnInit {
         complete: () => console.info('login complete')
       });
     }
+  }
+
+  resetPassword() {
+    this.authService.login(this.user).subscribe({
+      next: (metadata: any) => {
+        const token = metadata.data.token;
+        this.utilsService.setToken(token);
+        this.authService.profile().subscribe({
+          next: (metadata: any) => {
+            const codeProfile = metadata.data.profile.code;
+            const url = this.utilsService.redirect(codeProfile);
+            console.log('redirect()', url)
+            this.router.navigateByUrl(url);
+          },
+          error: (e) => console.error(e),
+          complete: () => console.info('login complete')
+        });
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('login complete')
+    });
   }
 
   login() {

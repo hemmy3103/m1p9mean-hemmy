@@ -21,11 +21,11 @@
     <tbody>
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let dish of dishes; let i = index">
         <th scope="row" class="px-6 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-          {{dish.name}}
+          {{dish.nom}}
         </th>
         <td class="px-6"> {{dish.description}} </td>
-        <td class="px-6"> {{dish.cost}} </td>
-        <td class="px-6"> {{dish.price}} </td>
+        <td class="px-6"> {{dish.cout}} </td>
+        <td class="px-6"> {{dish.prix}} </td>
         <td class="px-6">
           <app-switch-toogle [isChecked]="dish.visible" [identity]="'#visible'+i"></app-switch-toogle>
         </td>

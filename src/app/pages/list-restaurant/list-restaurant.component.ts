@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IRestaurant } from './../../types/types';
+import { RestaurantService } from './../../services/restaurant.service';
 
 @Component({
   selector: 'app-list-restaurant',
@@ -7,57 +8,57 @@ import { IRestaurant } from './../../types/types';
   styleUrls: ['./list-restaurant.component.css']
 })
 export class ListRestaurantComponent implements OnInit {
-  restaurants: Array<IRestaurant> = [
-    {
-      name: 'Gastro',
-      description: 'Gastro description',
-      adress: 'By Pass',
-      image: ''
-    },
-    {
-      name: 'KFC',
-      description: 'KFC description',
-      adress: 'By Pass',
-      image: ''
-    },
-    {
-      name: 'Samiflow',
-      description: 'Samiflow description',
-      adress: 'By Pass',
-      image: ''
-    },
-    {
-      name: 'Bogota',
-      description: 'Bogota description',
-      adress: 'By Pass',
-      image: ''
-    },
-    {
-      name: 'H2',
-      description: 'H2 description',
-      adress: 'By Pass',
-      image: ''
-    },
-    {
-      name: 'B1',
-      description: 'B1 description',
-      adress: 'By Pass',
-      image: ''
-    },
+  // restaurants: Array<IRestaurant> = [
+  //   {
+  //     name: 'Gastro',
+  //     description: 'Gastro description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
+  //   {
+  //     name: 'KFC',
+  //     description: 'KFC description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
+  //   {
+  //     name: 'Samiflow',
+  //     description: 'Samiflow description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
+  //   {
+  //     name: 'Bogota',
+  //     description: 'Bogota description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
+  //   {
+  //     name: 'H2',
+  //     description: 'H2 description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
+  //   {
+  //     name: 'B1',
+  //     description: 'B1 description',
+  //     adress: 'By Pass',
+  //     cout: ''
+  //   },
 
-  ];
-  constructor() { }
+  // ];
+
+  restaurants: Array<IRestaurant> = []
+  constructor(private restaurantService: RestaurantService) { }
 
   ngOnInit(): void {
+    this.restaurantService.restaurants().subscribe({
+      next: (metadata: any) => {
+        // console.log('metadata', metadata);
+        this.restaurants = metadata.data;
+      },
+      error: (e) => console.error(e),
+    });
   }
-
-  // rowsCount(){
-  //   const rows = Math.floor(this.listRestaurant.length/4);
-  //   const numbers = Array(rows).fill(null).map((x,i)=>i);
-  //   numbers.push(1);
-  //   console.log('rows', rows)
-  //   console.log('numbers', numbers)
-  //   return numbers;
-  // }
 
 }

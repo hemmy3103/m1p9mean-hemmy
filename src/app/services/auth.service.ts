@@ -11,6 +11,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private utilsService: UtilsService) { }
 
+  resetPassword() {
+    const options = this.utilsService.getOptions(true);
+    return this.http.get(`${BASE_URL}auth/reset-password`, options);
+  }
+
   profile() {
     const options = this.utilsService.getOptions(true);
     return this.http.get(`${BASE_URL}auth/profile`, options);
