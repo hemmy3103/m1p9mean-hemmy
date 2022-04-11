@@ -7,7 +7,7 @@ const {
     PROFILE_CLIENT,
     PROFILE_RESTAURANT,
     PROFILE_RESPONSABLE,
-    LIVREUR_RESTAURANT,
+    PROFILE_LIVREUR,
 } = require("../utils/constantes");
 
 async function resetPassword() {
@@ -122,7 +122,7 @@ async function findProfileUser(utilisateur) {
         utilisateur.id_profile.toJSON() != new ObjectId(PROFILE_CLIENT) &&
         utilisateur.id_profile.toJSON() != new ObjectId(PROFILE_RESTAURANT) &&
         utilisateur.id_profile.toJSON() != new ObjectId(PROFILE_RESPONSABLE) &&
-        utilisateur.id_profile.toJSON() != new ObjectId(LIVREUR_RESTAURANT)
+        utilisateur.id_profile.toJSON() != new ObjectId(PROFILE_LIVREUR)
     ) {
         throw new Error("Pas d'autorisation");
     }

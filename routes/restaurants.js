@@ -3,7 +3,7 @@ const { restaurantService, authService } = require("../services");
 const { responseBuilder, tools } = require("../utils");
 const router = express.Router();
 
-router.get("/", async function (req, res) {
+router.post("/", async function (req, res) {
     try {
         const token = tools.extractToken(req.headers.authorization);
         const tokenUtilisateur = await authService.findTokenUser(token);
