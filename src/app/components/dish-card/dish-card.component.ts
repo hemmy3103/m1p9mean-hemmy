@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IDish } from 'src/app/types/types';
+import { BASE_URL } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dish-card',
@@ -13,6 +14,10 @@ export class DishCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  dishImage(img: string | undefined){
+    return BASE_URL+'imgs/plats/'+img;
   }
 
   click(){

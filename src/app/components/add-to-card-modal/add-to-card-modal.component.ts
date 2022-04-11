@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IDish } from 'src/app/types/types';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-add-to-card-modal',
@@ -9,12 +10,17 @@ import { IDish } from 'src/app/types/types';
 export class AddToCardModalComponent implements OnInit {
   @Input() identity: string | undefined;
   number: number = 0;
+  @Input() showModal: boolean | undefined;
   @Input() dish: IDish| undefined;
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit(): void {
-    // console.log('this.dish', this.dish)
+  }
+
+  toggleModal(): void {
+    this.showModal = false;
+    this.utilsService.addPanier(this.dish, this.number);
   }
 
 }

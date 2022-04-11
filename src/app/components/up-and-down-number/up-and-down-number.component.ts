@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-up-and-down-number',
@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UpAndDownNumberComponent implements OnInit {
   @Input() number: number = 0;
+  @Output() getNumberChange = new EventEmitter<number>();
 
   constructor() { }
 
@@ -14,12 +15,15 @@ export class UpAndDownNumberComponent implements OnInit {
   }
   valuechange(newValue: number) {
     this.number = newValue;
+    this.getNumberChange.emit(newValue)
   }
   down() {
     this.number = this.number - 1;
+    this.getNumberChange.emit(this.number)
   }
 
   up() {
     this.number = this.number + 1;
+    this.getNumberChange.emit(this.number)
   }
 }

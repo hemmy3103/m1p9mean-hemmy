@@ -3,8 +3,24 @@
   <app-header title="Liste des plats"></app-header>
     <div class="grid gap-4 md:grid-cols-3 sm:grid-cols-1">
       <div *ngFor="let dish of dishes ; let i = index" [attr.data-index]="i">
-        <app-dish-card [dish]="dish" [identity]="'#dish'+ i"></app-dish-card>
-        <app-add-to-card-modal [dish]="dish" [identity]="'#dish'+ i" ></app-add-to-card-modal>
+        <!-- <button type="button" (click)="toggleModal(dish)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">{{dish._id}}</button> -->
+        <div class="my-5 mx-5 max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img class="p-8 rounded-t-lg" [src]="dishImage(dish?.img)" alt="product image">
+          </a>
+          <div class="px-5 pb-5">
+            <a href="#">
+              <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{dish?.nom}}</h5>
+              <p class="text-sm tracking-tight text-gray-900 dark:text-white">{{dish?.description}}</p>
+            </a>
+            <div class="flex justify-between items-center">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">Ar {{dish?.prix | number}}</span>
+              <button data-toggle="collapse" (click)="toggleModal(dish)" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Ajouter à la commande</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 </div>
+<app-add-to-card-modal [showModal]="showModal" [dish]="dish"></app-add-to-card-modal>
+<app-footer></app-footer>

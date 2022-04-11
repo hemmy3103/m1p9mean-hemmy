@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { TOKEN } from 'src/environments/environment';
+import { TOKEN, PANIER } from 'src/environments/environment';
 import { AuthService } from './auth.service';
+import { IDish } from 'src/app/types/types';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,23 @@ export class UtilsService {
 
   isLoggedIn() {
     return !!(this.getToken());
+  }
+
+  addPanier(dish: IDish| undefined, quantity: number) {
+    const actualPanier = JSON.parse(this.getPanier()||'[]');
+    console.log('-----------')
+    console.log('dish', dish)
+    console.log('quantity', quantity)
+    console.log('actualPanier', actualPanier)
+    console.log('-----------')
+  }
+
+  getPanier() {
+    return localStorage.getItem(PANIER);
+  }
+
+  rmPanier() {
+    localStorage.removeItem(PANIER);
   }
 
   getToken() {

@@ -10,6 +10,7 @@ export const environment = {
 export const BASE_URL = "http://localhost:3000/";
 export const APP_URL = "http://localhost:4200/";
 export const TOKEN = 'token-e-kaly';
+export const PANIER = 'panier-e-kaly';
 
 /*
  * For easier debugging in development mode, you can import the following file
