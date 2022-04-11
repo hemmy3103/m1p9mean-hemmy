@@ -1,28 +1,28 @@
 [
   {
     "nom": "Frite salade",
-    "id_restaurant": "625337f04e60cd8fc0b11606",
+    "id_restaurant": "6253fa23255e7201fb1fe2f4",
     "cout": 12000,
     "prix": 16000,
     "img": "1.jpg"
   },
   {
     "nom": "Ravitoto sy Hena-kisoa",
-    "id_restaurant": "625337f04e60cd8fc0b11606",
+    "id_restaurant": "6253fa23255e7201fb1fe2f4",
     "cout": 13000,
     "prix": 20000,
     "img": "2.jpg"
   },
   {
     "nom": "Kisoa",
-    "id_restaurant": "625337f04e60cd8fc0b11605",
+    "id_restaurant": "6253fa23255e7201fb1fe2f5",
     "cout": 13000,
     "prix": 20000,
     "img": "2.jpg"
   },
   {
     "nom": "Beignet",
-    "id_restaurant": "625337f04e60cd8fc0b11604",
+    "id_restaurant": "6253fa23255e7201fb1fe2f6",
     "cout": 13000,
     "prix": 20000,
     "img": "2.jpg"
