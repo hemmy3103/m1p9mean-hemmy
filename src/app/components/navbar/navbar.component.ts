@@ -10,7 +10,6 @@ import { APP_URL } from './../../../environments/environment';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  logo = './assets/logo-removebg.png';
 
 
   constructor(private authService: AuthService, private utilsService: UtilsService, private router: Router) { }

@@ -11,7 +11,6 @@ import { UtilsService } from './../../services/utils.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  logo:string = './assets/logo.png';
   user: IUserLogin = {
     nomUtilisateur: "",
     mdp: "",
