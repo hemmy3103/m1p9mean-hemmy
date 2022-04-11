@@ -52,6 +52,7 @@ import { OrderDeliveryTableComponent } from './components/order-delivery-table/o
 import { OrderDeliveryComponent } from './pages/order-delivery/order-delivery.component';
 import { OrderDeliveredTableComponent } from './components/order-delivered-table/order-delivered-table.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     OrderDeliveryComponent,
     OrderDeliveredTableComponent,
     SpinnerComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
